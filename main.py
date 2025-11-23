@@ -43,7 +43,7 @@ class PlantControlEnv(gym.Env):
         output = self.output_scaler.inverse_transform(raw_output)[0]
 
 
-    # ... [same as before]
+    
         error = np.linalg.norm(output - self.desired_output)
         reward = -np.power(error, 2)
         # Terminate if error is small enough (for faster training)
